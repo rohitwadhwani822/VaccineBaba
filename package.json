@@ -12,7 +12,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "watch:client": "npm run dev",
-    "watch:server": "node index.js"
+    "watch:server": "node index.js",
+    "prod": "npm run production",
+
+"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+
+"heroku-postbuild": "npm run production"
   },
   "dependencies": {
     "axios": "^0.21.1",
